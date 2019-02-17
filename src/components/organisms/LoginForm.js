@@ -1,31 +1,31 @@
 // TODO : do the login form here
 import React, { Component } from 'react';
-import { Button, Input } from '../atoms';
-import { Text, View, ImageBackground, Image } from 'react-native';
+import { Button, Input, Card, CardSection } from '../atoms';
+import { Text, ImageBackground, Image, View } from 'react-native';
 
 class LoginForm extends Component {
   onButtonPress() {
     console.log('bla');
   }
   render() {
-    const { viewStyle, imageStyle, logo } = styles;
+    const { viewStyle, imageStyle, logo, buttonContainer } = styles;
     return (
-      <View style={viewStyle}>
+      <Card style={viewStyle}>
         <ImageBackground
           source={require('../../assets/loginBackground.png')}
           style={imageStyle}
-        >
+        >    
           <Image source={require('../../assets/logo.png')} style={logo} />
           <Input placeholder="E-mail" value={this.props.email} />
           <Input placeholder="Contraseña" value={this.props.email} />
           <Button
-            style={styles.buttonStyle}
+            style={buttonContainer}
             onPress={this.onButtonPress.bind(this)}
           >
             <Text>Ingresar</Text>
           </Button>
         </ImageBackground>
-      </View>
+      </Card>
     );
   }
 }
@@ -38,15 +38,17 @@ const styles = {
     flex: 1,
     resizeMode: 'cover'
   },
-  buttonStyle: {
-    height: '10%',
-    width: '84%',
+  buttonContainer: {
+    flex:2,
+    height: '1%',
+    width: '100%',
     marginLeft: '8%',
     marginRight: '8%',
-    flexDirection: 'row'
+    marginTop: '8%',
+    backgroundColor: '#ff5722',
+    borderColor: '#ff5722'
   },
   logo: {
-    // flex:1,
     marginBottom: '5%',
     marginTop: '50%',
     marginLeft: '25%',
