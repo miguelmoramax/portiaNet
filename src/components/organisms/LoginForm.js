@@ -40,7 +40,7 @@ const styles = {
   },
   buttonContainer: {
     flex:2,
-    height: '1%',
+    height: '10%',
     width: '100%',
     marginLeft: '8%',
     marginRight: '8%',
