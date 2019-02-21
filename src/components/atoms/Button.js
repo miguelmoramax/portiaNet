@@ -1,23 +1,23 @@
 //FIXME : colors, stuffs pass style as props
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, Image } from 'react-native';
 
 const Button = ({ onPress, children, ...props }) => {
-  const { textStyle} = styles;
-  
+  const { textStyle } = styles;
+
   return (
     <View style={[props.style]}>
       <TouchableOpacity onPress={onPress}>
-        <Text style={textStyle}>{children}</Text>
+        {children ? (
+          <Text style={textStyle}>{children}</Text>
+        ) : (
+          <Image source={require('../../assets/point.png')} />
+        )}
       </TouchableOpacity>
     </View>
   );
 };
 const styles = {
-  viewStyle: {
-    width: '20%',
-    height: '20%'
-  },
   textStyle: {
     alignSelf: 'center',
     color: '#FFFFFF',

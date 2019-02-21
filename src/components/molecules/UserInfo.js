@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import { Button, Card, CardSection } from '../atoms';
-import { Avatar } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { AvatarIcon, Button, Card, CardSection } from '../atoms';
+
 
 class UserInfo extends Component {
   render() {
     const {
+      avatarContainer,
+      button,
       buttonContainer,
+      centerContainer,
       cardSectionContainer,
+      dateContainer,
+      rightContainer,
       textDate,
       textName,
       textPosition
@@ -16,52 +20,80 @@ class UserInfo extends Component {
     return (
       <Card>
         <CardSection style={cardSectionContainer}>
-          {/* TODO: get date  */}
-          <Avatar
-            rounded
-            source={{
-              uri:
-                'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
-            }}
-          />
+          <CardSection style={avatarContainer}>
+            <AvatarIcon />
+          </CardSection>
+          <CardSection style={centerContainer}>
+            <Text style={textName}>Jane Doe</Text>
+            <Text style={textPosition}>Supervisor Zona Centro</Text>
+          </CardSection>
+          <CardSection style={rightContainer}>
+            <CardSection style={dateContainer}>
+              <Text style={textDate}>17 de Febrero </Text>
+            </CardSection>
 
-          <Text style={textDate}>17 de Febrero </Text>
-          <Text style={textName}>Jhon Doe</Text>
-          <Text style={textPosition}>Supervisor Zona Centro</Text>
-          {/* <Button icon={<Icon name="arrow-right" size={15} color="white" />} /> */}
-
-          <Button style={buttonContainer}></Button>
-          {/* <Icon name="sc-telegram" type="evilicon" color="#517fa4" /> */}
+            <CardSection style={buttonContainer}>
+              <Button style={button} />
+            </CardSection>
+          </CardSection>
         </CardSection>
       </Card>
     );
   }
 }
 const styles = {
+  avatarContainer: {
+    marginTop: '10%',
+    marginLeft: '5%'
+  },
+  buttonContainer: {
+    marginTop: '50%',
+    marginRight: '15%'
+  },
   cardSectionContainer: {
+    flexDirection: 'row',
     height: '20%',
     backgroundColor: '#029794'
+  },
+  centerContainer: {
+    marginTop: '12%',
+    marginLeft: '5%'
+  },
+  dateContainer: {
+    marginTop: '7%',
+    marginRight: '8%'
+  },
+  rightContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'flex-end'
+  },
+  button: {
+    backgroundColor: '#ff5722',
+    borderColor: '#ff5722',
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 56,
+    height: 56,
+    borderRadius: 56 / 2
   },
   textDate: {
     textAlign: 'right',
     color: '#fff',
-    fontSize: 14
+    fontSize: 14,
+    fontWeight: 'normal'
+
   },
   textName: {
-    textAlign: 'center',
     color: '#fff',
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: 'bold'
+
   },
   textPosition: {
-    textAlign: 'center',
     color: '#fff',
     fontSize: 14
-  },
-  buttonContainer: {
-    backgroundColor: '#ff5722',
-    borderColor: '#ff5722',
-    width: 50,
-    height: 50
   }
 };
 export default UserInfo;
