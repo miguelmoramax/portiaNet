@@ -9,12 +9,13 @@ class LoginForm extends Component {
   }
   render() {
     const { viewStyle, imageStyle, logo, buttonContainer } = styles;
+    const source = { icon: require('../../assets/point.png') };
     return (
       <Card style={viewStyle}>
         <ImageBackground
           source={require('../../assets/loginBackground.png')}
           style={imageStyle}
-        >    
+        >
           <Image source={require('../../assets/logo.png')} style={logo} />
           <Input placeholder="E-mail" value={this.props.email} />
           <Input placeholder="Contraseña" value={this.props.email} />
@@ -39,7 +40,7 @@ const styles = {
     resizeMode: 'cover'
   },
   buttonContainer: {
-    flex:2,
+    flex: 2,
     height: '10%',
     width: '100%',
     marginLeft: '8%',
