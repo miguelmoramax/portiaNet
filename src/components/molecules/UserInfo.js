@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { AvatarIcon, Button, Card, CardSection } from '../atoms';
-import Icons from '@assets/images';
-
+import {connect} from 'react-redux';
 class UserInfo extends Component {
+  onButtonPress() {
+    this.props.showModal({
+      open: true,
+      title: 'Alert Modal',
+      closeModal: this.closeModal
+    }, 'alert')
+  }
   render() {
     const {
       avatarContainer,
@@ -33,7 +39,7 @@ class UserInfo extends Component {
             </CardSection>
 
             <CardSection style={buttonContainer}>
-              <Button style={button} name={'location'} size={45} color={'#fff'} />
+              <Button onPress={this.onButtonPress.bind(this)} style={button} name={'location'} size={45} color={'#fff'} />
             </CardSection>
           </CardSection>
         </CardSection>
@@ -99,4 +105,6 @@ const styles = {
     fontSize: 14
   }
 };
+
+
 export default UserInfo;
