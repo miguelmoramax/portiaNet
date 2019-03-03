@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { AvatarIcon, Button, Card, CardSection } from '../atoms';
-
-
+import {connect} from 'react-redux';
 class UserInfo extends Component {
+  onButtonPress() {
+    this.props.showModal({
+      open: true,
+      title: 'Alert Modal',
+      closeModal: this.closeModal
+    }, 'alert')
+  }
   render() {
     const {
       avatarContainer,
@@ -33,7 +39,7 @@ class UserInfo extends Component {
             </CardSection>
 
             <CardSection style={buttonContainer}>
-              <Button style={button} />
+              <Button onPress={this.onButtonPress.bind(this)} style={button} name={'location'} size={45} color={'#fff'} />
             </CardSection>
           </CardSection>
         </CardSection>
@@ -52,6 +58,7 @@ const styles = {
   },
   cardSectionContainer: {
     flexDirection: 'row',
+    flex:1,
     height: '20%',
     backgroundColor: '#029794'
   },
@@ -76,24 +83,28 @@ const styles = {
     justifyContent: 'center',
     width: 56,
     height: 56,
-    borderRadius: 56 / 2
+    borderRadius: 56 / 2,
+    shadowColor: '#3d0000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 5,
   },
   textDate: {
     textAlign: 'right',
     color: '#fff',
     fontSize: 14,
     fontWeight: 'normal'
-
   },
   textName: {
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold'
-
   },
   textPosition: {
     color: '#fff',
     fontSize: 14
   }
 };
+
+
 export default UserInfo;
