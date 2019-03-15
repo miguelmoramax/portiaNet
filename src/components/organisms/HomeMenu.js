@@ -60,4 +60,4 @@ const mapDispatchToProps = dispatch => ({
    dispatch(showModal({ modalProps, modalType }))
   }
  })
-export default connect(mapDispatchToProps)(HomeMenu);
+export default connect(null, mapDispatchToProps)(HomeMenu);
