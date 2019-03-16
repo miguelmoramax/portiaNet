@@ -1,12 +1,11 @@
 //FIXME : colors and stuffs
 import React from 'react';
 import { Image, View } from 'react-native';
-import { white } from 'ansi-colors';
 
 const AvatarIcon = () => {
   const { avatarIcon } = styles;
   return (
-    <View style={avatarIcon}>
+    <View>
       <Image style={avatarIcon} source={require('../../assets/avatar.jpg')} />
     </View>
   );
