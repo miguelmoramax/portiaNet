@@ -1,11 +1,10 @@
 // TODO : do the login form here
 import React, { Component } from 'react';
-import { Button, Input, Card, CardSection } from '../atoms';
-import { Text, ImageBackground, Image, View } from 'react-native';
+import { Button, Input, Card } from '../atoms';
+import { Text, ImageBackground, Image } from 'react-native';
 
 class LoginForm extends Component {
   onButtonPress() {
-    console.log('bla');
   }
   render() {
     const { viewStyle, imageStyle, logo, buttonContainer } = styles;
