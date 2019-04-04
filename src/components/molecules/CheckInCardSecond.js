@@ -29,19 +29,20 @@ export default class CheckInCardSecond extends Component {
           />
         </CardSection>
         <CardSection style={middleSection}>
+        <CardSection style={middleUpper}>
+            <Text style={textStyle}> A 3 Km </Text>
+          </CardSection>
           <CardSection style={middleCenter}>
             <Text style={locationStyle}> Construmart Maipú Nº 28 </Text>
             <Text style={textStyle}>
               Avenida Pajaritos 2098, Maipú, Santiago
             </Text>
           </CardSection>
-          <CardSection style={middleUpper}>
-            <Text style={textStyle}> A 3 Km </Text>
-          </CardSection>
+          
         </CardSection>
         <CardSection style={rightSection}>
           <CardSection style={buttonContainer}>
-            <Button style={button} name={'ok'} size={30} color={'#fff'} />
+            <Button style={button} name={'plus'} size={20} color={'#fff'} />
           </CardSection>
         </CardSection>
       </CardSection>
@@ -54,28 +55,29 @@ const styles = {
     borderColor: '#d6d6d6',
     borderWidth: 1,
     marginLeft: '2.5%',
-    width: '95%',
+    width: '96%',
     height: '25%'
   },
   button: {
-    backgroundColor: '#cecece',
-    borderColor: '#cecece',
+    backgroundColor: '#ff5722',
+    borderColor: '#ff5722',
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 40,
-    height: 40,
-    borderRadius: 40 / 2
+    width: 30,
+    height: 30,
+    borderRadius: 30 / 2
   },
   buttonContainer: {
     marginTop: '30%'
   },
   leftSection: {
-    width: '15%',
+    width: '20%',
     flexDirection: 'row'
   },
   middleSection: {
-    width: '65%',
+    width: '50%',
+    marginLeft: '-10%',
     flexDirection: 'column'
   },
   middleUpper: {
@@ -88,10 +90,11 @@ const styles = {
     marginLeft: '5%'
   },
   rightSection: {
-    width: '20%'
+    width: '30%',
+    marginLeft: '20%'
   },
   locationStyle: {
-    color: '#f5a623',
+    color: '#000',
     fontWeight: 'bold',
     fontStyle: 'normal',
     fontSize: 14

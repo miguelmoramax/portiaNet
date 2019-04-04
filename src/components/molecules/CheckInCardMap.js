@@ -34,13 +34,11 @@ export default class CheckInCard extends Component {
         <CardSection style={middleSection}>
           <CardSection style={middleUpper}>
             <MyIcon name={'location'} size={15} color={'#9b9b9b'} />
-            <Text style={textStyle}> 3 Km </Text>
+            <Text style={textStyle}> 9:58 </Text>
           </CardSection>
           <CardSection style={middleCenter}>
-            <Text style={locationStyle}> Construmart Maipú Nº 28 </Text>
-            <Text style={textStyle}>
-              Avenida Pajaritos 2098, Maipú, Santiago
-            </Text>
+            <Text style={locationStyle}> Nombre del Local Nº1 </Text>
+            <Text style={textStyle}>Dirección del Local, Santiago de Chile</Text>
           </CardSection>
         </CardSection>
       </CardSection>
